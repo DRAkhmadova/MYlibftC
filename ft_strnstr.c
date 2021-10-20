@@ -16,13 +16,9 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 	char	*d;
 
 	if (!(*s2))
-	{
 		return ((char *)s1);
-	}
 	if (!(*s1) || n == 0)
-	{
 		return (NULL);
-	}
 	while (*s1 && n > 0)
 	{
 		if (*s1 == *s2)
