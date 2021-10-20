@@ -6,12 +6,12 @@
 /*   By: oupside <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 19:09:54 by oupside           #+#    #+#             */
-/*   Updated: 2021/10/17 19:13:21 by oupside          ###   ########.fr       */
+/*   Updated: 2021/10/20 14:34:00 by oupside          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-void	ft_putstr_fd(char	*s, int	fd)
+void	ft_putstr_fd(char *s, int fd)
 {
 	if (s)
 	{

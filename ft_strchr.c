@@ -6,12 +6,12 @@
 /*   By: oupside <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 16:55:25 by oupside           #+#    #+#             */
-/*   Updated: 2021/10/15 16:58:35 by oupside          ###   ########.fr       */
+/*   Updated: 2021/10/20 14:54:34 by oupside          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-char	*ft_strchr(const char	*str, int	s)
+char	*ft_strchr(const char *str, int s)
 {
 	while (*str)
 	{

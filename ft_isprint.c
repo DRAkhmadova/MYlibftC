@@ -6,12 +6,12 @@
 /*   By: oupside <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 19:35:53 by oupside           #+#    #+#             */
-/*   Updated: 2021/10/11 19:55:46 by oupside          ###   ########.fr       */
+/*   Updated: 2021/10/20 14:11:23 by oupside          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include    "libft.h"
 
-int	ft_isprint(int	d)
+int	ft_isprint(int d)
 {
 	return (d >= 32 && d <= 126);
 }

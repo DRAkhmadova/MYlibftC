@@ -6,12 +6,12 @@
 /*   By: oupside <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 19:34:42 by oupside           #+#    #+#             */
-/*   Updated: 2021/10/11 19:52:25 by oupside          ###   ########.fr       */
+/*   Updated: 2021/10/20 14:10:51 by oupside          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include	"libft.h"
 
-int	ft_isdigit(int	d)
+int	ft_isdigit(int d)
 {
 	if (d >= '0' && d <= '9')
 		return (1);

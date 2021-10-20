@@ -1,2 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: oupside <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/20 14:50:40 by oupside           #+#    #+#             */
+/*   Updated: 2021/10/20 14:50:58 by oupside          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include"libft.h"
-char *ft_strmapi(char const *s, char (*f)(unsigned int, char));
+
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));

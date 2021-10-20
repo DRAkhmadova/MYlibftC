@@ -6,12 +6,12 @@
 /*   By: oupside <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 16:58:55 by oupside           #+#    #+#             */
-/*   Updated: 2021/10/15 17:02:08 by oupside          ###   ########.fr       */
+/*   Updated: 2021/10/20 14:35:20 by oupside          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-char	*ft_strdup(const char	*str)
+char	*ft_strdup(const char *str)
 {
 	char	*str_copy;
 	size_t	i;

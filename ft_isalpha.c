@@ -6,12 +6,12 @@
 /*   By: oupside <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 19:32:30 by oupside           #+#    #+#             */
-/*   Updated: 2021/10/11 19:43:47 by oupside          ###   ########.fr       */
+/*   Updated: 2021/10/20 14:09:07 by oupside          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include	"libft.h"
 
-int	ft_isalpha(int	d)
+int	ft_isalpha(int d)
 {
 	if ((d >= 'a' && d <= 'z') || (d >= 'A' && d <= 'Z'))
 		return (1);

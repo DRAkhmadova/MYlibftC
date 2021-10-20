@@ -6,12 +6,12 @@
 /*   By: oupside <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 19:33:36 by oupside           #+#    #+#             */
-/*   Updated: 2021/10/12 15:42:34 by oupside          ###   ########.fr       */
+/*   Updated: 2021/10/20 14:10:05 by oupside          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include	"libft.h"
 
-int	ft_isascii(int	d)
+int	ft_isascii(int d)
 {
 	return (d >= 0 && d <= 127);
 }
