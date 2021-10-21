@@ -11,23 +11,34 @@
 /* ************************************************************************** */
 #include"libft.h"
 
+char	*chek_ss(char *ss)
+{
+	if (!ss)
+		return (NULL);
+	else
+	{
+		ss[0] = 0;
+		return (ss);
+	}
+}
+
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t			s_len;
 	size_t			ss_len;
 	char			*ss;
 
-	s_len = ft_strlen(s);
-	ss_len = len;
 	if (!s)
 		return (NULL);
-	if (start >= s_len)
+	if (len > ft_strlen(s) - start)
+		len = ft_strlen(s) - start;
+	ss_len = len;
+	if (start >= ft_strlen(s))
 	{
-		ss = ft_strdup("0");
-		if (!ss)
-			return (NULL);
+		ss = (char *)malloc(1);
+		ss = chek_ss(ss);
+		return (ss);
 	}
-	else 
+	else
 	{
 		ss = ft_calloc(len + 1, sizeof(char));
 		if (!ss)
@@ -36,5 +47,5 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 			*ss++ = s[start++];
 	}
 	*ss = '\0';
-	return(ss - ss_len);
+	return (ss - ss_len);
 }
