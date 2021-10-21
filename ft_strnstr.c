@@ -10,29 +10,22 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
+#include <stdio.h>
+#include <string.h>
 
 char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 {
-	char	*d;
-
-	if (!(*s2))
+	if (!*s2)
 		return ((char *)s1);
-	if (!(*s1) || n == 0)
+	if (!*s1 || n == 0)
 		return (NULL);
 	while (*s1 && n > 0)
 	{
 		if (*s1 == *s2)
 		{
-			d = (char *)s1;
-			while (*s1 && *s1++ == *s2++ && n > 0)
-			{
-				if (!(*s2))
-					return (d);
-				n--;
-			}
+			if (ft_strncmp(s1, s2, ft_strlen(s2)) == 0 && ft_strlen(s2) <= n)
+				return ((char *)s1);
 		}
-		if (!*s1)
-			return (NULL);
 		n--;
 		s1++;
 	}
