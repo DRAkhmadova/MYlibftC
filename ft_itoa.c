@@ -11,25 +11,50 @@
 /* ************************************************************************** */
 #include"libft.h"
 
+char	*transf(char *d, long nc, int count)
+{
+	if (nc < 0)
+	{
+		while (count)
+		{
+			d[count - 1] = -nc % 10 + '0';
+			nc = nc / 10;
+			count--;
+		}
+		d[0] = '-';
+	}
+	else
+	{
+		while (count)
+		{
+			d[count - 1] = nc % 10 + '0';
+			nc = nc / 10;
+			count--;
+		}
+	}
+	return (d);
+}
+
 char	*ft_itoa(int n)
 {
 	char	*d;
+	int		count;
+	long	nc;
 
-	d = ft_strdup("0");
-	if (!(d))
+	nc = n;
+	count = 0;
+	if (n == 0 || n == -0)
+		count++;
+	while (n)
+	{
+		n = n / 10;
+		count++;
+	}
+	if (nc < 0)
+		count++;
+	d = (char *)ft_calloc((count + 1), sizeof(char));
+	if (!d)
 		return (NULL);
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
-	if (n < 0)
-	{
-		n *= -1;
-		return (ft_strjoin ("-", ft_itoa(n)));
-	}
-	*d = *d + (n % 10);
-	if (n >= 0 && n <= 9)
-	{
-		return (ft_strdup(d));
-	}
-	else
-		return (ft_strjoin(ft_itoa(n / 10), d));
+	transf(d, nc, count);
+	return (d);
 }

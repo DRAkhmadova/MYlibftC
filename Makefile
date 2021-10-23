@@ -3,36 +3,35 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bneucar <bneucar@student.42.fr>            +#+  +:+       +#+         #
+#    By: oupside <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/10/11 19:24:36 by bneucar           #+#    #+#              #
-#    Updated: 2021/10/12 17:13:48 by bneucar          ###   ########.fr        #
+#    Created: 2021/10/23 19:46:39 by oupside           #+#    #+#              #
+#    Updated: 2021/10/23 19:46:45 by oupside          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
 NAME		= libft.a
 
 SRCS		= $(shell find . -name "*.c")
 
 GCC			= gcc
 
+HEADER		= libft.h
+
 RM			= rm -f
 
-CFLAGS		= -Wall -Wextra -Werror -I.
-
-.PHONY:		all clean fclean re 
+CFLAGS		= -Wall -Wextra -Werror -I$(HEADER)
 
 OBJ = $(SRCS:.c=.o)
 
-FLAGS = -Wall -Wextra -Werror
+.PHONY:		all clean fclean re 
 
 all : $(NAME)
 
-$(NAME) : $(OBJ)
+$(NAME) : $(OBJ) $(HEADER)
 	ar rcs $(NAME) $?
 
-%.o : %.c 
-	gcc $(FLAGS) -c $< -o $@
+%.o : %.c $(HEADER)
+	$(GCC) $(CFLAGS) -c $< -o $@
 
 clean:
 		$(RM) $(OBJ)

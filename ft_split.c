@@ -13,8 +13,9 @@
 
 void	res_free(char **res)
 {
-	int f;
-    f = 0;
+	int	f;
+
+	f = 0;
 	while (res[f])
 	{
 		free(res[f]);
@@ -26,7 +27,7 @@ void	res_free(char **res)
 int	w_count(char const *s, char c)
 {
 	int	w_count;
-	
+
 	w_count = 0;
 	while (*s)
 	{
@@ -45,11 +46,9 @@ int	w_count(char const *s, char c)
 
 char	**ft_fill(char **res, int i, char const *s, char c)
 {
-	int count;
-	char const *s1;
-	int f;
-	
-	f = 0;
+	int			count;
+	char const	*s1;
+
 	count = 0;
 	s1 = s;
 	while (*s && *s != c)
@@ -57,8 +56,8 @@ char	**ft_fill(char **res, int i, char const *s, char c)
 		count++;
 		s++;
 	}
-	res[i] = (char *)malloc(sizeof(char) * count + 1);
-	if(!res[i])
+	res[i] = (char *)ft_calloc(count + 1, sizeof(char));
+	if (!res[i])
 		res_free(res);
 	count = 0;
 	while (*s1 && *s1 != c)
@@ -73,14 +72,14 @@ char	**ft_fill(char **res, int i, char const *s, char c)
 char	**ft_split(char const *s, char c)
 {
 	char	**res;
-	int	count;
-	int	i;
-	
-	if(!s)
+	int		count;
+	int		i;
+
+	if (!s)
 		return (NULL);
 	count = w_count(s, c);
-	res = (char **)malloc(sizeof(char *) * count + 1);
-	if(!res)
+	res = (char **)ft_calloc(count + 1, sizeof(char *));
+	if (!res)
 		return (NULL);
 	i = 0;
 	while (*s)
@@ -96,5 +95,5 @@ char	**ft_split(char const *s, char c)
 			i++;
 		}
 	}
-	return(res);
+	return (res);
 }
