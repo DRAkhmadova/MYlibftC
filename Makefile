@@ -5,25 +5,25 @@
 #                                                     +:+ +:+         +:+      #
 #    By: oupside <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/10/23 19:46:39 by oupside           #+#    #+#              #
-#    Updated: 2021/10/23 19:46:45 by oupside          ###   ########.fr        #
+#    Created: 2021/10/25 18:35:42 by oupside           #+#    #+#              #
+#    Updated: 2021/10/25 18:35:54 by oupside          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 NAME		= libft.a
 
 SRCS		= $(shell find . -name "*.c")
 
-GCC			= gcc
-
-HEADER		= libft.h
+CC			= gcc
 
 RM			= rm -f
 
+HEADER		= libft.h
+
 CFLAGS		= -Wall -Wextra -Werror -I$(HEADER)
 
-OBJ = $(SRCS:.c=.o)
+.PHONY:		all clean fclean re
 
-.PHONY:		all clean fclean re 
+OBJ = $(SRCS:.c=.o)
 
 all : $(NAME)
 
@@ -31,7 +31,7 @@ $(NAME) : $(OBJ) $(HEADER)
 	ar rcs $(NAME) $?
 
 %.o : %.c $(HEADER)
-	$(GCC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 		$(RM) $(OBJ)
